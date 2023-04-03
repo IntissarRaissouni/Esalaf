@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="600.0" style="-fx-background-color: #eae7fa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esalaf.ClientController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <TextField fx:id="ido" layoutX="-192.0" layoutY="448.0" />
+   <TableView fx:id="mytab" layoutX="120.0" layoutY="322.0" onMouseClicked="#tablehandleButtonAction" prefHeight="228.0" prefWidth="358.0" style="-fx-background-color: #EDF2F8;">
+     <columns>
+         <TableColumn fx:id="col_nom" prefWidth="126.0" style="-fx-background-color: #bdb7e4;" text="Nom" />
+         <TableColumn fx:id="col_tele" minWidth="0.0" prefWidth="128.0" style="-fx-background-color: #bdb7e4;" text="Telephone" />
+         <TableColumn fx:id="col_cin" prefWidth="103.0" style="-fx-background-color: #bdb7e4;" text="CIN" />
+     </columns>
+   </TableView>
+   <TextField fx:id="filterField" layoutX="214.0" layoutY="14.0" promptText="Search" />
+   <Button layoutX="480.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMenu" text="Revenir au Menu">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+      <effect>
+         <Lighting diffuseConstant="2.0" surfaceScale="0.0">
+            <bumpInput>
+               <Shadow />
+            </bumpInput>
+            <light>
+               <Light.Distant>
+                  <color>
+                     <Color red="0.8313725590705872" green="0.6235294342041016" blue="0.8823529481887817" />
+                  </color>
+               </Light.Distant>
+            </light>
+         </Lighting>
+      </effect>
+   </Button>
+   <AnchorPane layoutX="11.0" layoutY="140.0" prefHeight="98.0" prefWidth="428.0" style="-fx-background-color: #eedcea;">
+      <children>
+         <Label layoutX="11.0" layoutY="5.0" text="Nom :" textFill="#209ed4">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label layoutX="11.0" layoutY="33.0" prefHeight="30.0" prefWidth="112.0" text="Téléphonr :" textFill="#209ed4">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label layoutX="11.0" layoutY="60.0" prefHeight="30.0" prefWidth="54.0" text="CIN :" textFill="#209ed4">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <TextField fx:id="tele" layoutX="150.0" layoutY="35.0" prefHeight="26.0" prefWidth="270.0" promptText="Téléphone" />
+         <TextField fx:id="cin" layoutX="150.0" layoutY="62.0" prefHeight="26.0" prefWidth="270.0" promptText="CIN" />
+         <TextField fx:id="nom" layoutX="150.0" layoutY="7.0" prefHeight="26.0" prefWidth="270.0" promptText="Nom" />
+      </children>
+   </AnchorPane>
+   <Button fx:id="ok" layoutX="469.0" layoutY="272.0" onAction="#onSaveButtonClick" prefHeight="26.0" prefWidth="125.0" text="Enregistrer" textAlignment="CENTER">
+      <effect>
+         <Lighting diffuseConstant="2.0" surfaceScale="0.0">
+            <bumpInput>
+               <Shadow />
+            </bumpInput>
+            <light>
+               <Light.Distant>
+                  <color>
+                     <Color red="0.8313725590705872" green="0.6235294342041016" blue="0.8823529481887817" />
+                  </color>
+               </Light.Distant>
+            </light>
+         </Lighting>
+      </effect>
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Button layoutX="319.0" layoutY="272.0" mnemonicParsing="false" onAction="#clear" prefHeight="40.0" prefWidth="119.0" text="Réinitialiser">
+      <effect>
+         <Lighting diffuseConstant="2.0" surfaceScale="0.0">
+            <bumpInput>
+               <Shadow />
+            </bumpInput>
+            <light>
+               <Light.Distant azimuth="74.72">
+                  <color>
+                     <Color red="0.8313725590705872" green="0.6235294342041016" blue="0.8823529481887817" />
+                  </color>
+               </Light.Distant>
+            </light>
+         </Lighting>
+      </effect>
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Button fx:id="ok1" layoutX="177.0" layoutY="272.0" onAction="#onDeleteButtonClick" prefHeight="26.0" prefWidth="112.0" text="Supprimer">
+      <effect>
+         <Lighting diffuseConstant="2.0" surfaceScale="0.0">
+            <bumpInput>
+               <Shadow />
+            </bumpInput>
+            <light>
+               <Light.Distant>
+                  <color>
+                     <Color red="0.8313725590705872" green="0.6235294342041016" blue="0.8823529481887817" />
+                  </color>
+               </Light.Distant>
+            </light>
+         </Lighting>
+      </effect>
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Button layoutX="36.0" layoutY="272.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" prefHeight="26.0" prefWidth="112.0" text="Modifier">
+      <effect>
+         <Lighting diffuseConstant="2.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="0.0">
+            <bumpInput>
+               <Shadow />
+            </bumpInput>
+            <light>
+               <Light.Distant>
+                  <color>
+                     <Color red="0.8313725590705872" green="0.6235294342041016" blue="0.8823529481887817" />
+                  </color>
+               </Light.Distant>
+            </light>
+         </Lighting>
+      </effect>
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <ImageView fitHeight="140.0" fitWidth="181.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fitHeight="119.0" fitWidth="126.0">
+      <image>
+         <Image url="@esalaf.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="184.0" layoutY="14.0">
+      <image>
+         <Image url="@search.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="444.0" layoutY="14.0">
+      <image>
+         <Image url="@left-arrow.png" />
+      </image>
+   </ImageView>
+</AnchorPane>
